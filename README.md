@@ -183,7 +183,6 @@ Nota: Claude probó la lógica de la demo y de la partición por grupos con dato
 └── evidencia/
     ├── inventario_duplicados_y_particion.csv
     ├── metricas_test_sin_duplicados.json
-    └── pred_test.json                    # predicciones del modelo alojado usadas en la comparación
 ```
 
 Antes de entregar: confirmar que los archivos finales coinciden con la versión que se demostrará, que no hay claves ni datos personales, y que todos los **COMPLETAR** fueron reemplazados.
