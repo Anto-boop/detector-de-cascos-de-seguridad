@@ -1,5 +1,5 @@
 """Detector de casco de seguridad (YOLO26n) · UBO DSI 2026-S2 · Equipo AMIR.
-Demo principal: Hugging Face Space (app Gradio). Respaldo: Colab (ver README). El archivo de pesos debe estar junto a este archivo."""
+Demo principal: Hugging Face Space (app Gradio)."""
 import os
 # ===== CONFIGURACIÓN =====
 EQUIPO = "AMIR"
@@ -7,7 +7,6 @@ INTEGRANTES = ["Antonia Moya, Isidora Ramos (D01)"]
 URL_DATASET = "https://universe.roboflow.com/roboflow-universe-projects/hard-hats-fhbh5/dataset/6"
 
 # Modelo propio (YOLO26). Nombre esperado: modelo_casco_yolo26.pt, junto a este archivo.
-# Si ese nombre no existe pero hay un único .pt en la carpeta (p. ej. una copia renombrada), se usa ese.
 _CARPETA = os.path.dirname(os.path.abspath(__file__))
 MODELO_PT = os.path.join(_CARPETA, "modelo_casco_yolo26.pt")
 UMBRAL_INICIAL = 0.37     # umbral elegido en VALID para este modelo (máx. F1 de NO-Hardhat, notebook Reentrenar_sin_duplicados). Si la cámara no detecta nada, bájalo con el slider
@@ -289,7 +288,6 @@ Detecta **casco / sin casco** con un modelo **YOLO26 propio**, entrenado por el 
 ### Privacidad y seguridad
 - {"Este Space es público: las imágenes o el video que uses se envían al servidor de Hugging Face, donde se procesan. Esta app no las guarda, pero no uses imágenes de personas sin su autorización." if EN_SPACE else "Las imágenes se procesan en este computador y no se envían a otros servicios."} Usar solo con autorización de las personas filmadas y sin buscar identificarlas.
 - {"Las capturas de alertas se guardan en la carpeta `" + CARPETA_EVENTOS + "` de este computador: bórrenlas al terminar." if GUARDAR_CAPTURAS else "En esta versión publicada no se guardan imágenes de quienes la usan; la tabla de eventos solo vive en la sesión del navegador."}
-- El enlace público es temporal; usen `USUARIO_CLAVE` si lo comparten.
 """
 
 with gr.Blocks(title="Detector de casco · DSI UBO") as demo:
